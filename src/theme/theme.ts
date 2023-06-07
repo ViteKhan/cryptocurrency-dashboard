@@ -1,7 +1,6 @@
 import { createTheme } from '@mui/material/styles';
 import { green, red, orange } from '@mui/material/colors';
 
-import { components } from './components';
 import { typography } from './typography';
 
 export const theme = {
@@ -48,8 +47,7 @@ export const theme = {
       },
       divider: 'rgb(85, 89, 110)',
     },
-    typography: typography,
-    components: components,
+    typography,
   }),
   light: createTheme({
     palette: {
