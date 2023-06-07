@@ -13,7 +13,7 @@ function App() {
       path: '/',
       element: (
         <Layout>
-          <div>test</div>
+          <div>main page</div>
         </Layout>
       ),
     },
