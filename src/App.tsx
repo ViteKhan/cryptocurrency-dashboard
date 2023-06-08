@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import CssBaseline from '@mui/material/CssBaseline';
 import { Theme, ThemeProvider } from '@mui/material/styles';
 
@@ -12,26 +12,20 @@ import { useColorMode } from './context/ColorModeContext';
 
 function App() {
   const { colorMode } = useColorMode();
-  const router = createBrowserRouter([
-    {
-      path: '/',
-      element: <Layout><Dashboard/></Layout>,
-    },
-    {
-      path: '/about',
-      element: <Layout><About/></Layout>,
-    },
-    {
-      path: '/contacts',
-      element: <Layout><Contacts/></Layout>,
-    },
-  ]);
 
   return (
     <ApiContextProvider>
       <ThemeProvider theme={(theme as Record<string, Theme>)[colorMode]}>
         <CssBaseline/>
-        <RouterProvider router={router}/>
+        <BrowserRouter>
+          <Routes>
+            <Route element={<Layout/>}>
+              <Route path="/" element={<Dashboard/>} />
+              <Route path="/about" element={<About/>} />
+              <Route path="/contacts" element={<Contacts/>} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
       </ThemeProvider>
     </ApiContextProvider>
   );

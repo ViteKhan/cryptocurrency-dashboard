@@ -1,6 +1,6 @@
 import { FC, ReactNode } from 'react';
 import Button from '@mui/material/Button';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useTheme } from '@mui/material/styles';
 
 interface NavLinkProps {
@@ -13,6 +13,9 @@ interface NavLinkProps {
 export const NavLink: FC<NavLinkProps> = ({ href, text, icon, onClose }) => {
   const theme = useTheme();
   const navigate = useNavigate();
+  const location = useLocation();
+  const isActive = location.pathname === href;
+
   const onClick = () => {
     navigate(href);
     onClose();
@@ -25,13 +28,12 @@ export const NavLink: FC<NavLinkProps> = ({ href, text, icon, onClose }) => {
       size={'small'}
       variant={'text'}
       sx={{
-        color: theme.palette.mode === 'dark' ? theme.palette.text.secondary : theme.palette.primary.main,
+        color: isActive
+          ? theme.palette.mode === 'dark' ? theme.palette.primary.contrastText : theme.palette.primary.dark
+          : theme.palette.mode === 'dark' ? theme.palette.text.secondary : theme.palette.primary.main,
         fontSize: theme.typography.subtitle1,
         fontWeight: 'medium',
         textTransform: 'none',
-        '&:active': {
-          color: theme.palette.mode === 'dark' ? theme.palette.primary.contrastText : theme.palette.primary.dark,
-        },
         '&:hover': {
           color: theme.palette.mode === 'dark' ? theme.palette.primary.contrastText : theme.palette.primary.dark,
         },

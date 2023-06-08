@@ -1,15 +1,12 @@
-import { FC, ReactNode } from 'react';
+import { FC } from 'react';
 import { Box } from '@mui/material';
+import { Outlet } from 'react-router-dom';
 import { useTheme } from '@mui/material/styles';
 
 import { Footer } from '../Footer';
 import { Header } from '../Header';
 
-interface LayoutProps {
-  children: ReactNode;
-}
-
-export const Layout: FC<LayoutProps> = ({ children }) => {
+export const Layout: FC = () => {
   const theme = useTheme();
 
   return (
@@ -22,7 +19,7 @@ export const Layout: FC<LayoutProps> = ({ children }) => {
           minHeight: '100%',
         }}
       >
-        {children}
+        <Outlet/>
       </Box>
       <Footer/>
     </Box>
