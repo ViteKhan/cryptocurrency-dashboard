@@ -2,7 +2,10 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import CssBaseline from '@mui/material/CssBaseline';
 import { Theme, ThemeProvider } from '@mui/material/styles';
 
+import { About } from 'pages/About';
 import { ApiContextProvider } from './API';
+import { Contacts } from 'pages/Contacts';
+import { Dashboard } from 'pages/Dashboard';
 import { Layout } from 'components/Layout';
 import { theme } from './theme';
 import { useColorMode } from './context/ColorModeContext';
@@ -12,19 +15,15 @@ function App() {
   const router = createBrowserRouter([
     {
       path: '/',
-      element: (
-        <Layout>
-          <div>main page</div>
-        </Layout>
-      ),
+      element: <Layout><Dashboard/></Layout>,
     },
     {
       path: '/about',
-      element: (
-        <Layout>
-          <div>about</div>
-        </Layout>
-      ),
+      element: <Layout><About/></Layout>,
+    },
+    {
+      path: '/contacts',
+      element: <Layout><Contacts/></Layout>,
     },
   ]);
 
