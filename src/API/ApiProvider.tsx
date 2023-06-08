@@ -1,22 +1,22 @@
 import { createContext, FC, ReactNode, useContext } from 'react';
 
-import { CoingeckoService, GithubService } from './services';
+import { CoinGeckoService, GithubService } from './services';
 import { DataProvider } from './DataProvider';
 
 class ApiProvider {
-  private readonly _coingeckoProvider: DataProvider;
+  private readonly _coinGeckoProvider: DataProvider;
   private readonly _gitHubProvider: DataProvider;
   private readonly _services: {
-    coingecko: CoingeckoService;
+    coinGecko: CoinGeckoService;
     github: GithubService;
   };
 
-  constructor(coingeckoProvider: DataProvider,  gitHubProvider: DataProvider) {
-    this._coingeckoProvider = coingeckoProvider;
+  constructor(coinGeckoProvider: DataProvider,  gitHubProvider: DataProvider) {
+    this._coinGeckoProvider = coinGeckoProvider;
     this._gitHubProvider = gitHubProvider;
 
     this._services = {
-      coingecko: new CoingeckoService(this._coingeckoProvider),
+      coinGecko: new CoinGeckoService(this._coinGeckoProvider),
       github: new GithubService(this._gitHubProvider),
     };
   }

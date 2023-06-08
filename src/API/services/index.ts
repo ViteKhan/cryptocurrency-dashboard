@@ -1,2 +1,2 @@
-export { CoingeckoService } from './CoingeckoService';
+export { CoinGeckoService } from './CoinGeckoService';
 export { GithubService } from './GithubService';
