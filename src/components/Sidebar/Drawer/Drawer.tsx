@@ -30,7 +30,7 @@ export const Drawer: FC<DrawerProps> = ({ isOpen, onClose }) => {
             alignItems: 'flex-start',
           }}
         >
-          <Navbar/>  
+          <Navbar onClose={onClose}/>
         </Box>
       </MuiDrawer>
   );

@@ -5,21 +5,28 @@ import HelpIcon from '@mui/icons-material/HelpOutlineOutlined';
 
 import { NavLink } from '../NavLink';
 
-export const Navbar: FC = () => (
+interface NavbarProps {
+  onClose: () => void;
+}
+
+export const Navbar: FC<NavbarProps> = ({ onClose }) => (
   <>
     <NavLink
       href={'/'}
       icon={<DashboardIcon/>}
+      onClose={onClose}
       text={'Dashboard'}
     />
     <NavLink
       href={'/about'}
       icon={<HelpIcon/>}
+      onClose={onClose}
       text={'About'}
     />
     <NavLink
-      href={'#'}
+      href={'/contacts'}
       icon={<EmailIcon />}
+      onClose={onClose}
       text={'Contact'}
     />
   </>

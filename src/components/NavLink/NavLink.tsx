@@ -7,16 +7,21 @@ interface NavLinkProps {
   href: string;
   icon: ReactNode;
   text: string;
+  onClose: () => void;
 }
 
-export const NavLink: FC<NavLinkProps> = ({ href, text, icon }) => {
+export const NavLink: FC<NavLinkProps> = ({ href, text, icon, onClose }) => {
   const theme = useTheme();
   const navigate = useNavigate();
+  const onClick = () => {
+    navigate(href);
+    onClose();
+  };
 
   return (
     <Button
       color={'primary'}
-      onClick={() => navigate(href)}
+      onClick={onClick}
       size={'small'}
       variant={'text'}
       sx={{
