@@ -29,13 +29,13 @@ export const NavLink: FC<NavLinkProps> = ({ href, text, icon, onClose }) => {
       variant={'text'}
       sx={{
         color: isActive
-          ? theme.palette.mode === 'dark' ? theme.palette.primary.contrastText : theme.palette.primary.dark
+          ? theme.palette.mode === 'dark' ? theme.palette.primary.contrastText : theme.palette.text.secondary
           : theme.palette.mode === 'dark' ? theme.palette.text.secondary : theme.palette.primary.main,
         fontSize: theme.typography.subtitle1,
         fontWeight: 'medium',
         textTransform: 'none',
         '&:hover': {
-          color: theme.palette.mode === 'dark' ? theme.palette.primary.contrastText : theme.palette.primary.dark,
+          color: theme.palette.mode === 'dark' ? theme.palette.primary.contrastText : theme.palette.text.secondary,
         },
         '& svg': {
           mr: 0.5

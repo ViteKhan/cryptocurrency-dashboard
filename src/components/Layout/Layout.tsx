@@ -16,7 +16,6 @@ export const Layout: FC = () => {
         sx={{
           padding: '20px 24px',
           backgroundColor: theme.palette.background.default,
-          minHeight: '100%',
         }}
       >
         <Outlet/>
