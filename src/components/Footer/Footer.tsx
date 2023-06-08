@@ -10,6 +10,7 @@ export const Footer: FC = () => {
 
   return (
     <Box
+      component={'footer'}
       sx={{
         background: theme.palette.background.default,
         position: 'fixed',

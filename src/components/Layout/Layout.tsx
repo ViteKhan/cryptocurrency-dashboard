@@ -13,6 +13,7 @@ export const Layout: FC = () => {
     <Box paddingTop={'65px'} paddingBottom={'55px'} minHeight={'100vh'}>
       <Header/>
       <Box
+        component={'main'}
         sx={{
           padding: '20px 24px',
           backgroundColor: theme.palette.background.default,
