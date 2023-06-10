@@ -13,11 +13,11 @@ const currentDate = new Date().toLocaleDateString('en-GB', {
 export const DashboardHeader: FC = () => {
   const theme = useTheme();
   return (
-    <Grid item>
-      <Typography color={theme.palette.text.primary} variant={'h5'} fontSize={'22px'} marginBottom={'10px'}>
+    <Grid item width={'100%'}>
+      <Typography color={theme.palette.text.primary} variant={'h6'} marginBottom={'10px'}>
         Overview
       </Typography>
-        <Typography color={theme.palette.text.secondary} variant={'h6'} fontSize={'18px'}>
+        <Typography color={theme.palette.text.secondary} variant={'subtitle1'}>
           <span>{'Today:  '}</span>
           <span
             style={{

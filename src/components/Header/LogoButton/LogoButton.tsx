@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Box, Typography } from '@mui/material';
+import { Avatar, Typography } from '@mui/material';
 import { indigo } from '@mui/material/colors';
 import { Link } from 'react-router-dom';
 import { useTheme } from '@mui/material/styles';
@@ -13,11 +13,8 @@ export const LogoButton: FC = () => {
 
   return (
     <Link to={'/'} style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
-      <Box
+      <Avatar
         sx={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
           backgroundColor: indigo[500],
           height: 45,
           width: 45,
@@ -27,7 +24,7 @@ export const LogoButton: FC = () => {
         }}
       >
         <CurrencyExchangeOutlinedIcon sx={{ color: 'white' }}/>
-      </Box>
+      </Avatar>
       <Typography
         variant={'h5'}
         sx={{

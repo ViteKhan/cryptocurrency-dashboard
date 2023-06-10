@@ -15,8 +15,9 @@ export const Layout: FC = () => {
       <Box
         component={'main'}
         sx={{
-          padding: { sm: '20px 24px', xs: '20px 16px' },
+          padding: '20px 0',
           backgroundColor: theme.palette.background.default,
+          minHeight: '100vh',
         }}
       >
         <Outlet/>
