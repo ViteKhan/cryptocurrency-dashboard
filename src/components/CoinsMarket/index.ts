@@ -1,0 +1,1 @@
+export { CoinsMarket } from './CoinsMarket';
