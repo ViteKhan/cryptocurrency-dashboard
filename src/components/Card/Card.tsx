@@ -16,8 +16,10 @@ export const Card: FC<CardProps> = ({ text, icon, color, value }) => {
     <MuiCard>
       <CardContent
         sx={{
-          padding: '16px',
           borderRadius: '4px',
+          "&:last-child": {
+            paddingBottom: '16px',
+          },
         }}
       >
         <Grid container justifyContent={'space-between'} alignItems={'center'}>
