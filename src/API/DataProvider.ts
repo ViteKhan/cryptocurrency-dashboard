@@ -8,12 +8,16 @@ export class DataProvider {
     this._rootUrl = rootUrl;
   }
 
-  getBaseUrl = (url: string) => `${this._rootUrl}${url}`;
+  #getBaseUrl = (url: string) => `${this._rootUrl}${url}`;
 
-  request = async (requestUrl: string, params: RequestParams) => {
-    let url = this.getBaseUrl(requestUrl);
+  #getHeaders = () => {
+    return { 'Accept': 'application/json' };
+  };
 
-    return await axios({ url, ...params })
+  #request = async (requestUrl: string, params: RequestParams) => {
+    let url = this.#getBaseUrl(requestUrl);
+
+    return await axios({ url, ...params, headers: this.#getHeaders() })
       .then(response => response.data)
       .catch((e) => {
         throw new Error('Something went wrong: ' + e.message);
@@ -26,6 +30,6 @@ export class DataProvider {
       params,
     };
 
-    return this.request(url, requestParams);
+    return this.#request(url, requestParams);
   };
 }
