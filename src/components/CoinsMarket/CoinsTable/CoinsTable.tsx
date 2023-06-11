@@ -12,7 +12,7 @@ interface CoinsTableProps {
 
 export const CoinsTable: FC<CoinsTableProps> = ({ searchTerm}) => {
   const { page, perPage, onChangePage, onChangePerPage } = usePagination();
-  const { data, isLoading, isSuccess } = useGetCoins({ page, perPage });
+  const { data, isLoading, isSuccess } = useGetCoins(page);
 
   const filteredCoins = useMemo(() => {
     return isSuccess

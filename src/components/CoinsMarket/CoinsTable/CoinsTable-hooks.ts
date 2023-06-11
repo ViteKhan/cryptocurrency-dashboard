@@ -3,17 +3,12 @@ import { useQuery } from '@tanstack/react-query';
 
 import { useApi } from 'API';
 
-interface UseGetCoinsProps {
-  page: number;
-  perPage: number;
-}
-
-export const useGetCoins = ({ page, perPage }: UseGetCoinsProps) => {
+export const useGetCoins = (page: number) => {
   const api = useApi();
 
   return useQuery({
-    queryKey: ['coins-market'],
-    queryFn: () => api.coinGecko.coinsMarket.get(page, perPage),
+    queryKey: ['coins-market', page],
+    queryFn: () => api.coinGecko.coinsMarket.get(page),
   });
 };
 
