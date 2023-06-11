@@ -48,7 +48,7 @@ export const TableBody: FC<TableBodyProps> = ({ coins }) => {
             </TableRow>
           );
         })
-        : <TableRow><TableCell>Not found</TableCell></TableRow>
+        : <TableRow><TableCell colSpan={7} align={'center'}>Not found</TableCell></TableRow>
       }
     </MuiTableBody>
   );

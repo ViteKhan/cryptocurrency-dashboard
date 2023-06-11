@@ -3,14 +3,11 @@ import { useTheme } from '@mui/material/styles';
 import CurrencyExchangeOutlinedIcon from '@mui/icons-material/CurrencyExchangeOutlined';
 
 import { Card } from '../../Card';
-import { Loader } from '../../Loader';
 import { useGetExchanges } from './Exchanges-hooks';
 
 export const Exchanges: FC = () => {
   const theme = useTheme();
   const { data, isLoading } = useGetExchanges();
-
-  if (isLoading) return <Loader/>;
 
   return (
     <Card
@@ -18,6 +15,7 @@ export const Exchanges: FC = () => {
       value={data?.length || 0}
       color={theme.palette.success.dark}
       icon={<CurrencyExchangeOutlinedIcon/>}
+      isLoading={isLoading}
     />
   );
 };

@@ -2,7 +2,7 @@ import { FC, useMemo } from 'react';
 import { Card, Table, TableContainer, TablePagination } from '@mui/material';
 
 import { Coin } from 'models';
-import { Loader } from 'components/Loader';
+import { SkeletonTable } from './SkeletonTable';
 import { TableBody } from './TableBody';
 import { TableHeader } from './TableHeader';
 import { useGetCoins, usePagination } from './CoinsTable-hooks';
@@ -26,7 +26,9 @@ export const CoinsTable: FC<CoinsTableProps> = ({ searchTerm}) => {
     return filteredCoins.slice(startIndex, startIndex + perPage);
   }, [filteredCoins, page, perPage]);
 
-  if (isLoading) return <Loader/>;
+  if (isLoading) {
+    return <SkeletonTable/>;
+  }
 
   return (
     <TableContainer component={Card}>

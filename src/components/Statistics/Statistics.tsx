@@ -18,5 +18,3 @@ export const Statistics: FC = () => {
     </>
   );
 };
-
-export default Statistics;

@@ -3,14 +3,11 @@ import { useTheme } from '@mui/material/styles';
 import CategoryOutlinedIcon from '@mui/icons-material/CategoryOutlined'
 
 import { Card } from '../../Card';
-import { Loader } from '../../Loader';
 import { useGetCategories } from './Categories-hooks';
 
 export const Categories: FC = () => {
   const theme = useTheme();
   const { data, isLoading } = useGetCategories();
-
-  if (isLoading) return <Loader/>;
 
   return (
     <Card
@@ -18,6 +15,7 @@ export const Categories: FC = () => {
       value={data?.length || 0}
       color={theme.palette.error.dark}
       icon={<CategoryOutlinedIcon sx={{ marginBottom: '4px' }}/>}
+      isLoading={isLoading}
     />
   );
 };
