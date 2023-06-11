@@ -1,11 +1,20 @@
-import { FC } from 'react';
-import { Box, Card, CardContent, InputAdornment, SvgIcon, TextField } from '@mui/material';
+import { ChangeEvent, FC } from 'react';
+import {
+  Box,
+  Card,
+  CardContent,
+  InputAdornment,
+  SvgIcon,
+  TextField,
+} from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
-import { useSearchFilter } from './SearchFilter-hooks';
+interface SearchFilterProps {
+  search: string;
+  onChangeSearch: (event: ChangeEvent<HTMLInputElement>) => void;
+}
 
-export const SearchFilter: FC = () => {
-  const { search, onChangeSearch } = useSearchFilter();
+export const SearchFilter: FC<SearchFilterProps> = ({ search, onChangeSearch }) => {
   return (
     <Card>
       <CardContent sx={{ "&:last-child": { paddingBottom: '16px' }, borderRadius: '4px' }}>
@@ -14,15 +23,15 @@ export const SearchFilter: FC = () => {
             fullWidth
             InputProps={{
               startAdornment: (
-                <InputAdornment position='start'>
-                  <SvgIcon fontSize='small' color='action'>
+                <InputAdornment position={'start'}>
+                  <SvgIcon fontSize={'small'} color={'action'}>
                     <SearchIcon />
                   </SvgIcon>
                 </InputAdornment>
               )
             }}
-            placeholder='Search a cryptocurrency'
-            variant='outlined'
+            placeholder={'Search a cryptocurrency'}
+            variant={'outlined'}
             onChange={onChangeSearch}
             value={search}
           />

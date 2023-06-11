@@ -1,8 +1,11 @@
-import { useQuery } from '@tanstack/react-query';
-import { useApi } from 'API';
+import { ChangeEvent, useState } from 'react';
 
-export const useGetCoins = () => {
-  const api = useApi();
+export const useSearchFilter = () => {
+  const [search, setSearch] = useState<string>('');
 
-  return useQuery({ queryKey: ['coins'], queryFn: api.coinGecko.coinsMarket.get });
+  const onChangeSearch = (event: ChangeEvent<HTMLInputElement>) => {
+    setSearch(event.target.value);
+  };
+
+  return { search, onChangeSearch };
 };
