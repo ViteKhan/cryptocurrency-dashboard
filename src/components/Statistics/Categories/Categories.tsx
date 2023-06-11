@@ -15,7 +15,7 @@ export const Categories: FC = () => {
   return (
     <Card
       text={'categories'}
-      value={data.length}
+      value={data?.length || 0}
       color={theme.palette.error.dark}
       icon={<CategoryOutlinedIcon sx={{ marginBottom: '4px' }}/>}
     />

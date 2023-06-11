@@ -15,7 +15,7 @@ export const MarketIndexes: FC = () => {
   return (
     <Card
       text={'market indexes'}
-      value={data.length}
+      value={data?.length || 0}
       color={theme.palette.primary.main}
       icon={<BarChartIcon/>}
     />

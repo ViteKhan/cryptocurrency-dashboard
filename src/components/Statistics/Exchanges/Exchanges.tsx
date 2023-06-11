@@ -15,7 +15,7 @@ export const Exchanges: FC = () => {
   return (
     <Card
       text={'exchanges'}
-      value={data.length}
+      value={data?.length || 0}
       color={theme.palette.success.dark}
       icon={<CurrencyExchangeOutlinedIcon/>}
     />

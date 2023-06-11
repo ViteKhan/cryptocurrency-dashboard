@@ -15,7 +15,7 @@ export const AssetPlatforms: FC = () => {
   return (
     <Card
       text={'asset platforms'}
-      value={data.length}
+      value={data?.length || 0}
       color={theme.palette.warning.dark}
       icon={<PieChartIcon/>}
     />
