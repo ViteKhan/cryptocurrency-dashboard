@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Box } from '@mui/material';
+import { Box, Container } from '@mui/material';
 import { Outlet } from 'react-router-dom';
 import { useTheme } from '@mui/material/styles';
 
@@ -20,7 +20,9 @@ export const Layout: FC = () => {
           minHeight: '100vh',
         }}
       >
-        <Outlet/>
+        <Container maxWidth={false}>
+          <Outlet/>
+        </Container>
       </Box>
       <Footer/>
     </Box>

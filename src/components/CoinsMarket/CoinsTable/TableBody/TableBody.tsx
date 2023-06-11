@@ -2,8 +2,10 @@ import { FC } from 'react';
 import { TableBody as MuiTableBody, TableCell, TableRow } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 
+import { Coin } from 'models';
+
 interface TableBodyProps {
-  coins: any[];
+  coins: Coin[];
 }
 
 export const TableBody: FC<TableBodyProps> = ({ coins }) => {

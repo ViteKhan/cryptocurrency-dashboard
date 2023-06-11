@@ -1,6 +1,7 @@
 import { FC, useMemo } from 'react';
 import { Card, Table, TableContainer, TablePagination } from '@mui/material';
 
+import { Coin } from 'models';
 import { Loader } from 'components/Loader';
 import { TableBody } from './TableBody';
 import { TableHeader } from './TableHeader';
@@ -16,8 +17,7 @@ export const CoinsTable: FC<CoinsTableProps> = ({ searchTerm}) => {
 
   const filteredCoins = useMemo(() => {
     return isSuccess
-      // @ts-ignore
-      ? data.filter(coin =>  coin.name.toLowerCase().includes(searchTerm.toLowerCase()))
+      ? data.filter((coin: Coin) =>  coin.name.toLowerCase().includes(searchTerm.toLowerCase()))
       : [];
   }, [data, searchTerm, isSuccess]);
 

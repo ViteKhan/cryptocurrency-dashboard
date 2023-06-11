@@ -1,27 +1,18 @@
 import { FC } from 'react';
-import { Box, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
+
+import { PieChart } from 'components/PieChart';
 
 export const About: FC = () => {
+  const theme = useTheme();
 
   return (
-    <Box>
-      <Typography fontWeight={600}>About</Typography>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, distinctio laboriosam maxime porro quae quidem tempora unde. Animi doloribus ducimus ea eius fugiat impedit itaque nihil quisquam reiciendis suscipit. Impedit.
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, ab amet animi at autem deserunt expedita fuga iure nulla odit, placeat sequi sit soluta sunt velit? Esse quibusdam sed veritatis?
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, ab amet animi at autem deserunt expedita fuga iure nulla odit, placeat sequi sit soluta sunt velit? Esse quibusdam sed veritatis?
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, ab amet animi at autem deserunt expedita fuga iure nulla odit, placeat sequi sit soluta sunt velit? Esse quibusdam sed veritatis?
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, ab amet animi at autem deserunt expedita fuga iure nulla odit, placeat sequi sit soluta sunt velit? Esse quibusdam sed veritatis?
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, ab amet animi at autem deserunt expedita fuga iure nulla odit, placeat sequi sit soluta sunt velit? Esse quibusdam sed veritatis?
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, ab amet animi at autem deserunt expedita fuga iure nulla odit, placeat sequi sit soluta sunt velit? Esse quibusdam sed veritatis?
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, ab amet animi at autem deserunt expedita fuga iure nulla odit, placeat sequi sit soluta sunt velit? Esse quibusdam sed veritatis?
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, ab amet animi at autem deserunt expedita fuga iure nulla odit, placeat sequi sit soluta sunt velit? Esse quibusdam sed veritatis?
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, ab amet animi at autem deserunt expedita fuga iure nulla odit, placeat sequi sit soluta sunt velit? Esse quibusdam sed veritatis?
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, ab amet animi at autem deserunt expedita fuga iure nulla odit, placeat sequi sit soluta sunt velit? Esse quibusdam sed veritatis?
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, ab amet animi at autem deserunt expedita fuga iure nulla odit, placeat sequi sit soluta sunt velit? Esse quibusdam sed veritatis?
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, ab amet animi at autem deserunt expedita fuga iure nulla odit, placeat sequi sit soluta sunt velit? Esse quibusdam sed veritatis?
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, ab amet animi at autem deserunt expedita fuga iure nulla odit, placeat sequi sit soluta sunt velit? Esse quibusdam sed veritatis?
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, ab amet animi at autem deserunt expedita fuga iure nulla odit, placeat sequi sit soluta sunt velit? Esse quibusdam sed veritatis?
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, ab amet animi at autem deserunt expedita fuga iure nulla odit, placeat sequi sit soluta sunt velit? Esse quibusdam sed veritatis?
-    </Box>
+    <>
+      <Typography color={theme.palette.text.primary} variant={'h6'} marginBottom={'10px'}>
+        Project review
+      </Typography>
+      <PieChart/>
+    </>
   );
 };

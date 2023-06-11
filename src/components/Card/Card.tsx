@@ -17,7 +17,7 @@ export const Card: FC<CardProps> = ({ text, icon, color, value }) => {
       <CardContent
         sx={{
           borderRadius: '4px',
-          "&:last-child": {
+          '&:last-child': {
             paddingBottom: '16px',
           },
         }}
