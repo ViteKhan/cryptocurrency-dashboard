@@ -23,10 +23,10 @@ class ApiProvider {
   public getServices = () => this._services;
 }
 
-const coingeckoProvider = new DataProvider('https://api.coingecko.com/api/v3');
+const coinGeckoProvider = new DataProvider('https://api.coingecko.com/api/v3');
 const gitHubProvider = new DataProvider('https://api.github.com/repos');
 
-const apiProvider = new ApiProvider(coingeckoProvider, gitHubProvider);
+const apiProvider = new ApiProvider(coinGeckoProvider, gitHubProvider);
 
 export const ApiContextProvider: FC<{ children: ReactNode }> = ({ children }) => (
   <ApiContext.Provider value={apiProvider}>

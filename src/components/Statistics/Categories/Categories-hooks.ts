@@ -1,9 +1,9 @@
-import { useQuery } from 'react-query';
+import { useQuery } from '@tanstack/react-query';
 
 import { useApi } from 'API';
 
 export const useGetCategories = () => {
   const api = useApi();
 
-  return useQuery('categories', api.coinGecko.statistics.categories.get);
+  return useQuery({ queryKey: ['categories'], queryFn: api.coinGecko.statistics.categories.get });
 };

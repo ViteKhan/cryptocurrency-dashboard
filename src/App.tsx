@@ -1,6 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import CssBaseline from '@mui/material/CssBaseline';
-import { QueryClient, QueryClientProvider } from 'react-query';
 import { Theme, ThemeProvider } from '@mui/material/styles';
 
 import { About } from 'pages/About';
@@ -11,23 +10,13 @@ import { Layout } from 'components/Layout';
 import { theme } from './theme';
 import { useColorMode } from './context/ColorModeContext';
 
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      refetchOnWindowFocus: false,
-      staleTime: 500,
-    },
-  },
-});
-
 function App() {
   const { colorMode } = useColorMode();
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <ApiContextProvider>
-        <ThemeProvider theme={(theme as Record<string, Theme>)[colorMode]}>
-          <CssBaseline/>
+    <ThemeProvider theme={(theme as Record<string, Theme>)[colorMode]}>
+        <CssBaseline/>
+        <ApiContextProvider>
           <BrowserRouter>
             <Routes>
               <Route element={<Layout/>}>
@@ -37,9 +26,8 @@ function App() {
               </Route>
             </Routes>
           </BrowserRouter>
-        </ThemeProvider>
-      </ApiContextProvider>
-    </QueryClientProvider>
+        </ApiContextProvider>
+      </ThemeProvider>
   );
 }
 
